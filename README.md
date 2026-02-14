@@ -157,25 +157,6 @@ poetry run ruff format chatserver/
 - **Testing**: pytest
 - **Linting**: ruff
 
-## Future Enhancements
-
-- [ ] Add Tailscale integration (like the original Go version)
-- [ ] Multiple chat rooms support
-- [ ] Private messaging between users
-- [ ] User authentication
-- [ ] Persistent message history (database)
-- [ ] File transfer support
-- [ ] Encryption for messages
-
-## Differences from chat-tails (Go version)
-
-This Python implementation maintains feature parity with the Go version but with some differences:
-
-- Uses Python asyncio instead of Go goroutines
-- Uses argparse instead of pflag
-- ANSI escape codes directly instead of lipgloss
-- No Tailscale support yet (planned)
-
 ## License
 
 MIT

@@ -1,35 +1,47 @@
 [tool.poetry]
 name = "meshchat"
 version = "0.1.0"
-description = "A mesh networking chat application"
-authors = ["Cristian Rubio <cristianrubioa@gmail.com>"]
+description = "Terminal-based chat server with asyncio"
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-license = "LICENSE"
-packages = [{include = "chatserver"}]
-
-[tool.poetry.scripts]
-meshchat = "chatserver.main:cli"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-typer = "^0.12.0"
-aiolimiter = "^1.1.0"
+typer = "^0.12.5"
 rich = "^13.7.0"
-pydantic-settings = "^2.12.0"
-python-dotenv = "^1.2.1"
+aiolimiter = "^1.1.0"
+pydantic-settings = "^2.2.0"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
 pytest-asyncio = "^0.23.0"
 ruff = "^0.2.0"
+pytest-cov = "^7.0.0"
+
+[tool.poetry.scripts]
+meshchat = "chatserver.main:cli"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["test"]
+
+[tool.coverage.run]
+omit = [
+    "test/*",
+    "chatserver/main.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.ruff]
-line-length = 88
-target-version = "py311"
-
-[tool.pytest.ini_options]
-asyncio_mode = "auto"
