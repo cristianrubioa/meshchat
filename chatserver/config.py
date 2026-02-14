@@ -1,4 +1,5 @@
 from functools import lru_cache
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,6 +18,12 @@ class Settings(BaseSettings):
     history_size: int = 50
     plain_text: bool = False
     log_level: str = "INFO"
+    
+    max_message_length: int = 1000
+    rate_limit_max_messages: int = 5
+    rate_limit_window_seconds: int = 5
+    max_nickname_len: int = 20
+    min_nickname_len: int = 2
 
 
 @lru_cache
