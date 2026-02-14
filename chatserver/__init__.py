@@ -1,3 +1,1 @@
-"""
-MeshChat - Chat Server Package
-"""
+

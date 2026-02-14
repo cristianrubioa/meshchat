@@ -1,3 +1,1 @@
-"""
-MeshChat - User interface package
-"""
+

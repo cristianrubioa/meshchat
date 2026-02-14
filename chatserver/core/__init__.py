@@ -1,3 +1,0 @@
-"""
-MeshChat - Core functionality package
-"""

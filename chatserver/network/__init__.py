@@ -1,3 +1,1 @@
-"""
-MeshChat - Network functionality package
-"""
+
