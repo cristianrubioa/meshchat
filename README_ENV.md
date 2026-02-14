@@ -17,7 +17,6 @@ poetry install
 ### Development Mode
 
 ```bash
-poetry install
 poetry shell
 meshchat --help
 ```

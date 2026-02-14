@@ -71,7 +71,7 @@ poetry run meshchat --help
 | Command | Description |
 |---------|-------------|
 | `/who` | List all users in the room |
-| `/me <action>` | Send an action message |
+| `/me <action>` | Send an action message (e.g., `/me waves`) |
 | `/help` | Show available commands |
 | `/quit` | Disconnect from chat |
 
