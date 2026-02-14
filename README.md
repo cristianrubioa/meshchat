@@ -85,3 +85,15 @@ For development setup, configuration details, and architecture information, see 
 ## License
 
 BSD-3-Clause license
+
+## Inspiration
+
+Inspired by the Go project [chat-tails](https://github.com/bscott/chat-tails).
+
+MeshChat is a Python-first reimplementation with its own:
+
+- async architecture  
+- CLI UX  
+- rate limiting  
+- configuration system  
+- development guide  
