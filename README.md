@@ -2,6 +2,9 @@
 
 A terminal-based chat application built in Python. Share a chat room over your network - users connect via netcat or telnet, no client installation needed.
 
+<img width="1854" height="1168" alt="Screenshot from 2026-02-13 22-56-31" src="https://github.com/user-attachments/assets/a1713d61-0d46-4d79-8833-b7ea0f8db93b" />
+
+
 ## Features
 
 - **Zero Client Setup** - Users connect with just `nc` or `telnet`
