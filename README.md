@@ -81,4 +81,4 @@ For development setup, configuration details, and architecture information, see 
 
 ## License
 
-MIT
+BSD-3-Clause license
