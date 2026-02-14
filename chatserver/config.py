@@ -11,6 +11,7 @@ class Settings(BaseSettings):
         env_prefix="MESHCHAT_"
     )
     
+    host: str = "0.0.0.0"
     port: int = 2323
     room_name: str = "Chat Room"
     max_users: int = 10

@@ -141,13 +141,6 @@ poetry run ruff check chatserver/
 poetry run ruff format chatserver/
 ```
 
-### Quick Test
-
-Use the provided test script:
-```bash
-./test_chat.sh
-```
-
 ## How It Works
 
 1. **Server** - Listens for TCP connections on specified port
@@ -198,6 +191,7 @@ cp .env.example .env
 
 Edit `.env` with your preferred settings:
 ```env
+MESHCHAT_HOST=0.0.0.0
 PORT=2323
 ROOM_NAME="Chat Room"
 MAX_USERS=10
@@ -205,6 +199,11 @@ ENABLE_HISTORY=false
 HISTORY_SIZE=50
 PLAIN_TEXT=false
 LOG_LEVEL=INFO
+MESHCHAT_MAX_MESSAGE_LENGTH=1000
+MESHCHAT_RATE_LIMIT_MAX_MESSAGES=5
+MESHCHAT_RATE_LIMIT_WINDOW_SECONDS=5
+MESHCHAT_MAX_NICKNAME_LEN=20
+MESHCHAT_MIN_NICKNAME_LEN=2
 ```
 
 ### Configuration Priority

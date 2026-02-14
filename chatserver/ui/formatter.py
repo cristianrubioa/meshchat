@@ -1,5 +1,3 @@
-import hashlib
-
 from chatserver.ui.constants import (
     USER_COLORS,
     RESET,
@@ -13,8 +11,8 @@ from chatserver.ui.constants import (
 
 
 def get_user_color(username: str) -> str:
-    hash_value = int(hashlib.md5(username.encode()).hexdigest(), 16)
-    return USER_COLORS[hash_value % len(USER_COLORS)]
+    hash_val = sum(ord(c) * (i * 7 + 13) for i, c in enumerate(username))
+    return USER_COLORS[hash_val % len(USER_COLORS)]
 
 
 class Formatter:
