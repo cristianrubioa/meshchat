@@ -4,7 +4,6 @@
 ![Poetry](https://img.shields.io/badge/Poetry-managed-60A5FA?logo=poetry&logoColor=white)
 ![pytest](https://img.shields.io/badge/tested_with-pytest-0A9EDC?logo=pytest&logoColor=white)
 ![License](https://img.shields.io/badge/license-BSD--3--Clause-blue)
-![CI](https://github.com/cristianrubioa/meshchat/actions/workflows/ci.yml/badge.svg)
 
 A terminal-based chat application built in Python. Share a chat room over your network - users connect via netcat or telnet, no client installation needed.
 
