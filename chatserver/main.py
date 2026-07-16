@@ -18,11 +18,13 @@ logger = logging.getLogger(__name__)
 @click.option("--history", is_flag=True, help="Enable message history")
 @click.option("--history-size", type=int, help="Number of messages in history")
 @click.option("--plain-text", is_flag=True, help="Disable ANSI formatting")
-@click.option("--log-level", type=str, help="Logging level (DEBUG, INFO, WARNING, ERROR)")
+@click.option(
+    "--log-level", type=str, help="Logging level (DEBUG, INFO, WARNING, ERROR)"
+)
 def cli(host, port, room_name, max_users, history, history_size, plain_text, log_level):
     settings = get_settings()
     config_dict = settings.model_dump()
-    
+
     overrides = {
         "host": host,
         "port": port,
@@ -31,21 +33,21 @@ def cli(host, port, room_name, max_users, history, history_size, plain_text, log
         "history_size": history_size,
         "log_level": log_level,
     }
-    
+
     if history:
         overrides["enable_history"] = True
     if plain_text:
         overrides["plain_text"] = True
-    
+
     config_dict.update({k: v for k, v in overrides.items() if v is not None})
-    
+
     level = config_dict.pop("log_level")
     logging.basicConfig(
         level=getattr(logging, level.upper()),
         format="[%(asctime)s] %(levelname)s - %(message)s",
-        datefmt="%H:%M:%S"
+        datefmt="%H:%M:%S",
     )
-    
+
     server = Server(
         host=config_dict["host"],
         port=config_dict["port"],
@@ -53,20 +55,20 @@ def cli(host, port, room_name, max_users, history, history_size, plain_text, log
         max_users=config_dict["max_users"],
         enable_history=config_dict["enable_history"],
         history_size=config_dict["history_size"],
-        plain_text=config_dict["plain_text"]
+        plain_text=config_dict["plain_text"],
     )
-    
+
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    
+
     def signal_handler():
         logger.info("Received shutdown signal")
         loop.create_task(server.stop())
         loop.stop()
-    
+
     signal.signal(signal.SIGINT, lambda *_: signal_handler())
     signal.signal(signal.SIGTERM, lambda *_: signal_handler())
-    
+
     try:
         loop.run_until_complete(server.run())
     except KeyboardInterrupt:
@@ -78,9 +80,3 @@ def cli(host, port, room_name, max_users, history, history_size, plain_text, log
 
 if __name__ == "__main__":
     cli()
-
-
-
-
-
-

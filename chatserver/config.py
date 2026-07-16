@@ -8,9 +8,9 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
-        env_prefix="MESHCHAT_"
+        env_prefix="MESHCHAT_",
     )
-    
+
     host: str = "0.0.0.0"
     port: int = 2323
     room_name: str = "Chat Room"
@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     history_size: int = 50
     plain_text: bool = False
     log_level: str = "INFO"
-    
+
     max_message_length: int = 1000
     rate_limit_max_messages: int = 5
     rate_limit_window_seconds: int = 5
