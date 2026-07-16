@@ -1,5 +1,11 @@
 # MeshChat
 
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![Poetry](https://img.shields.io/badge/Poetry-managed-60A5FA?logo=poetry&logoColor=white)
+![pytest](https://img.shields.io/badge/tested_with-pytest-0A9EDC?logo=pytest&logoColor=white)
+![License](https://img.shields.io/badge/license-BSD--3--Clause-blue)
+![CI](https://github.com/cristianrubioa/meshchat/actions/workflows/ci.yml/badge.svg)
+
 A terminal-based chat application built in Python. Share a chat room over your network - users connect via netcat or telnet, no client installation needed.
 
 <img width="1854" height="1168" alt="Screenshot from 2026-02-13 22-56-31" src="https://github.com/user-attachments/assets/a1713d61-0d46-4d79-8833-b7ea0f8db93b" />
@@ -80,7 +86,7 @@ poetry run meshchat --help
 
 ## Development
 
-For development setup, configuration details, and architecture information, see [README_ENV.md](README_ENV.md).
+For development setup, configuration details, and architecture information, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
