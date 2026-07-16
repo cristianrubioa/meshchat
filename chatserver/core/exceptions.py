@@ -39,7 +39,7 @@ class NicknameInvalidCharsError(Exception):
 @dataclass
 class NicknameTakenError(Exception):
     nickname: str
-    
+
     def __str__(self):
         return f"Nickname '{self.nickname}' is already taken. Please choose another."
 
@@ -60,11 +60,3 @@ class RateLimitError(Exception):
 class RoomFullError(Exception):
     def __str__(self):
         return "The chat room is currently full. Please try again later."
-
-
-@dataclass
-class UnknownCommandError(Exception):
-    command: str
-    
-    def __str__(self):
-        return f"Unknown command: {self.command}"
